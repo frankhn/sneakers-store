@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "sourceMap": true,
+    "outDir": "./build",
+    "strict": true,
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "typeRoots": ["node_modules/@types", "./src/types"],
+    "resolveJsonModule": true,
+    "baseUrl": "./",
+    "paths": {
+      "helpers/*": ["src/helpers/*"],
+      "constants/*": ["src/constants/*"],
+      "models/*": ["src/database/models/*"],
+      "tests/*": ["src/tests/*"],
+      "swagger/*": ["src/swagger/*"],
+      "resources/*": ["src/resources/*"],
+      "v1/*": ["src/resources/api/v1/*"],
+      "middlewares/*": ["src/middlewares/*"],
+      "locales/*": ["src/locales/*"],
+    }
+  },
+  "lib": ["es2015"],
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
