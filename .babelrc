@@ -9,5 +9,18 @@
       }
     ],
     "@babel/preset-typescript"
+  ],
+  "plugins": [
+    ["module-resolver", {
+      "alias": {
+        "helpers": "./src/helpers",
+        "middlewares": "./src/middlewares",
+        "constants": "./src/constants",
+        "locales": "./src/locales",
+        "models": "./src/database/models",
+        "swagger": "./src/swagger",
+        "resources": "./src/resources"
+      }
+    }]
   ]
 }
