@@ -1,0 +1,35 @@
+language: node_js
+node_js:
+  - '12'
+
+services:
+  - postgresql
+addons:
+  postgresql: '9.5'
+
+env:
+  global:
+    - NODE_ENV=test
+    - DATABASE_URL_TEST=postgresql://sneakers:sneakers@localhost/sneakers
+
+cache:
+  directories:
+    - node_modules
+
+branches:
+  only:
+    - develop
+
+install:
+  - npm install
+
+before_script:
+  - psql -c 'create database mola;' -U postgres
+  - psql -c "CREATE USER sneakers WITH PASSWORD 'sneakers';" -U postgres
+  # - npm run db:migrate
+
+script:
+  - npm run test:ci
+
+after_success:
+  # - npm run coveralls
