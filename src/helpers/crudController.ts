@@ -35,7 +35,7 @@ const checkRecord = ({
       if (!record) {
         return jsonResponse({
           res,
-          status: statusCodes.BAD_REQUEST,
+          status: statusCodes.NOT_FOUND,
           message: `${translate(`${model.name} doesn't exist`)}`,
           errors: {
             [singleRecord]: {
