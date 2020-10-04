@@ -18,7 +18,7 @@
       "constants/*": ["src/constants/*"],
       "models/*": ["src/database/models/*"],
       "tests/*": ["src/tests/*"],
-      "swagger/*": ["src/swagger/*"],
+      "swagger/*": ["src/resources/swagger/*"],
       "resources/*": ["src/resources/*"],
       "v1/*": ["src/resources/api/v1/*"],
       "middlewares/*": ["src/middlewares/*"],
@@ -26,6 +26,6 @@
     }
   },
   "lib": ["es2015"],
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "../../user.ts"],
   "exclude": ["node_modules"]
 }
