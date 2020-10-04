@@ -23,7 +23,7 @@
     "db:reset": "npm run db:drop && npm run db:create && npm run db:migrate && npm run db:seed",
     "test": "cross-env NODE_ENV=test jest --coverage --forceExit --detectOpenHandles  --runInBand",
     "test:watch": "cross-env NODE_ENV=test jest --forceExit --detectOpenHandles  --runInBand --watchAll",
-    "test:ci": "npm run db:reset:migrate:seed:test && CI=true cross-env NODE_ENV=test jest --forceExit --detectOpenHandles  --runInBand",
+    "test:ci": "npm run db:migrate && npm run db:seed && CI=true cross-env NODE_ENV=test jest --forceExit --detectOpenHandles  --runInBand",
     "db:reset:migrate:seed:test": "cross-env NODE_ENV=test npm run db:reset",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
