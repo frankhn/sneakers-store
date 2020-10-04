@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import swaggerUi from 'swagger-ui-express';
 import sneakers from './sneakers/sneakers.route'
-import swaggerDocument from 'swagger/v1';
+import swaggerDocument from 'resources/api/v1/swagger';
 
 const router = Router();
 
