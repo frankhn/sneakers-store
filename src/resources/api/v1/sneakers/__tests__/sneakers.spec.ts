@@ -64,7 +64,6 @@ describe('Sneakers', () => {
             const res = await request(app)
                 .get(`${urlPrefix}/sneakers/${sneakerID}`)
 
-            console.log(res.body, sneakerID)
             expect(res.status).toBe(statusCodes.NOT_FOUND)
             expect(res.body.message).toBeTruthy()
             expect(res.body.errors).toHaveProperty('sneaker')
