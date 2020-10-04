@@ -1,0 +1,10 @@
+{
+  "name": "sneakers",
+  "scripts": {},
+  "env": {},
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  }
+}
