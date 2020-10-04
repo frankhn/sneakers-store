@@ -12,7 +12,7 @@ router
 
 router
     .route('/:id')
-    .all(controller.checkRecord)
+    .all(validators.getOne, controller.checkRecord)
     .get(controller.getOne)
 
 export default router;
