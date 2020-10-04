@@ -13,7 +13,7 @@ const translate = (key: string, locale = 'en'): string => {
   }
 
   if (!locales[locale][key]) {
-    throw new Error(`Translation for ${key} doesn't exist`);
+    throw new Error(`Translation for ${key} isn't available`);
   }
 
   return locales[locale][key];
