@@ -24,12 +24,13 @@ install:
   - npm install
 
 before_script:
-  - psql -c 'create database mola;' -U postgres
+  - psql -c 'create database sneakers;' -U postgres
   - psql -c "CREATE USER sneakers WITH PASSWORD 'sneakers';" -U postgres
   # - npm run db:migrate
 
 script:
   - npm run test:ci
+  - npm run coveralls
 
 after_success:
   # - npm run coveralls

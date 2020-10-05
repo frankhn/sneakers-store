@@ -20,7 +20,12 @@
     "db:migrate": "npm run sequelize db:migrate",
     "db:migrate:reset": "npm run sequelize db:migrate:undo:all",
     "db:seed": "npm run sequelize db:seed:all",
-    "db:reset": "npm run db:drop && npm run db:create && npm run db:migrate && npm run db:seed"
+    "db:reset": "npm run db:drop && npm run db:create && npm run db:migrate && npm run db:seed",
+    "test": "cross-env NODE_ENV=test jest --coverage --forceExit --detectOpenHandles  --runInBand",
+    "test:watch": "cross-env NODE_ENV=test jest --forceExit --detectOpenHandles  --runInBand --watchAll",
+    "test:ci": "npm run db:migrate && npm run db:seed && CI=true cross-env NODE_ENV=test jest --forceExit --detectOpenHandles  --runInBand",
+    "db:reset:migrate:seed:test": "cross-env NODE_ENV=test npm run db:reset",
+    "coveralls": "jest --coverage && coveralls < coverage/lcov.info"
   },
   "repository": {
     "type": "git",
@@ -37,9 +42,9 @@
   "homepage": "https://github.com/frankhn/sneakers-city#readme",
   "dependencies": {
     "@sentry/node": "^5.17.0",
-    "bcryptjs": "^2.4.3",
     "celebrate": "^12.1.1",
     "cors": "^2.8.5",
+    "dayjs": "^1.8.28",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "faker": "^4.1.0",
@@ -55,7 +60,6 @@
     "@babel/preset-env": "^7.10.2",
     "@babel/preset-typescript": "^7.10.1",
     "@types/async": "^3.2.3",
-    "@types/bcryptjs": "^2.4.2",
     "@types/bluebird": "^3.5.32",
     "@types/cors": "^2.8.6",
     "@types/express": "^4.17.6",
@@ -71,6 +75,7 @@
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-watch": "^7.0.0",
     "coveralls": "^3.1.0",
+    "cross-env": "^7.0.2",
     "eslint": "^7.2.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-import-resolver-babel-module": "^5.1.2",

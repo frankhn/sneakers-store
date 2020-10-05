@@ -1,4 +1,3 @@
-import * as Sentry from '@sentry/node';
 import { Request, Response, NextFunction } from 'express';
 import { SERVER_ERROR } from 'constants/statusCodes';
 import jsonResponse from 'helpers/jsonResponse';
@@ -19,10 +18,6 @@ const asyncHandler = (cb: CallbackFunction) => async (
   try {
     await cb(req, res, next);
   } catch (err) {
-    if (isProduction) {
-      Sentry.captureException(err);
-    }
-
     const status = err.status || SERVER_ERROR;
 
     return jsonResponse({
