@@ -12,16 +12,26 @@ git clone `this Repo`
 ```
 
 ## Usage
+Run the below commands to get the app up and running
+```
+npm i
+```
 
+```
+npm run dev
+```
 
-### Technologies
-- NodeJS / Typescript
-- Postgres / Sequelize
+Further, read the documentation on the app, 
 
 ### Documentation
 ```
   GET /api/v1/swagger
 ```
+
+### Technologies
+- NodeJS / Typescript
+- Postgres / Sequelize
+
 
 ## Usage
 
