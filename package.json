@@ -26,7 +26,7 @@
     "test:ci": "npm run db:reset:migrate:seed:test && CI=true cross-env NODE_ENV=test jest --forceExit --detectOpenHandles  --runInBand",
     "db:reset:migrate:seed:test": "cross-env NODE_ENV=test npm run db:reset",
     "coveralls": "jest --coverage && coveralls < coverage/lcov.info",
-    "docker": "docker-compose up --force-recreate -d"
+    "docker": "docker-compose up --force-recreate"
   },
   "repository": {
     "type": "git",
