@@ -23,9 +23,10 @@
     "db:reset": "npm run db:drop && npm run db:create && npm run db:migrate && npm run db:seed",
     "test": "cross-env NODE_ENV=test jest --coverage --forceExit --detectOpenHandles  --runInBand",
     "test:watch": "cross-env NODE_ENV=test jest --forceExit --detectOpenHandles  --runInBand --watchAll",
-    "test:ci": "npm run db:migrate && npm run db:seed && CI=true cross-env NODE_ENV=test jest --forceExit --detectOpenHandles  --runInBand",
+    "test:ci": "npm run db:reset:migrate:seed:test && CI=true cross-env NODE_ENV=test jest --forceExit --detectOpenHandles  --runInBand",
     "db:reset:migrate:seed:test": "cross-env NODE_ENV=test npm run db:reset",
-    "coveralls": "jest --coverage && coveralls < coverage/lcov.info"
+    "coveralls": "jest --coverage && coveralls < coverage/lcov.info",
+    "docker": "docker-compose up --force-recreate"
   },
   "repository": {
     "type": "git",
@@ -41,7 +42,6 @@
   },
   "homepage": "https://github.com/frankhn/sneakers-city#readme",
   "dependencies": {
-    "@sentry/node": "^5.17.0",
     "celebrate": "^12.1.1",
     "cors": "^2.8.5",
     "dayjs": "^1.8.28",
@@ -51,7 +51,6 @@
     "morgan": "^1.10.0",
     "pg": "^8.2.1",
     "sequelize": "^5.21.13",
-    "sequelize-cli": "^5.5.1",
     "swagger-ui-express": "^4.1.4",
     "typescript": "^3.9.5"
   },
@@ -86,6 +85,7 @@
     "jest": "^26.0.1",
     "nodemon": "^2.0.4",
     "prettier": "^2.0.5",
+    "sequelize-cli": "^5.5.1",
     "supertest": "^4.0.2"
   }
 }
